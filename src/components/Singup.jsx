@@ -11,6 +11,9 @@ const Singup = () => {
     const passwordRef = useRef()
     const passwordconformationRef = useRef()
     const handleSubmit = async (e)=> {
+        if(passwordRef.current.value !== passwordconformationRef.current.value){
+           return setError
+        }
         e.preventDefualt()
         try{
             setError("")
