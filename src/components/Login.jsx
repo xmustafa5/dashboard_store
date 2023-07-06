@@ -1,7 +1,7 @@
 import { Card,Form,Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Singup = () => {
+const Login = () => {
     return(
         <>
         
@@ -17,21 +17,21 @@ const Singup = () => {
                     <Form.Label htmlFor="password">Password</Form.Label>
                     <Form.Control type="password" id="password" />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label htmlFor="password-confirmatiom">Password confirmation</Form.Label>
-                    <Form.Control type="password" id="password-confirmatiom" />
-                </Form.Group>
+             
                 <Button variant="primary" type="submit">
-        signup
+                Log in
       </Button>
             </Form>
+            <div className="w-100 text-center mt-3">
+            <Link to="/ForgotPassword">forgot password</Link>
+            </div>
         </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
-        Already have a account? <Link to="/login">login</Link>
+        need an account <Link to="/singup">signup</Link>
         </div>
         </>
     )
 }
 
-export default Singup;
+export default Login;
