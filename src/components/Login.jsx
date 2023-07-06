@@ -2,6 +2,11 @@ import { Card,Form,Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
+
+
+
+const Login = () => {
+    const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
@@ -24,9 +29,6 @@ import { Link } from "react-router-dom";
     }
     setLoading(false);
   }
-
-
-const Login = () => {
     return(
         <>
         
