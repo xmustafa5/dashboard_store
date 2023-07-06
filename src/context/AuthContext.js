@@ -9,11 +9,11 @@ const AuthProvider = ({ children }) => {
        const logout = () =>{
       return  signOut(auth)
        }
-       const login = (email,password) =>{
-        return signInWithEmailAndPassword(auth,email.password)
-       }
+       const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
         const signup = (email,password) =>{
-                createUserWithEmailAndPassword(auth,email,password)
+             return   createUserWithEmailAndPassword(auth,email,password)
         }
         useEffect(()=>{
           const unsubcribe =  onAuthStateChanged(auth,(user)=>{
@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
             }
         },[])
   return (
-    <AuthContext.Provider value={{currentUser, signup, logout}}>
+    <AuthContext.Provider value={{currentUser, signup, logout, login}}>
         {!loading && children}
     </AuthContext.Provider>
   )

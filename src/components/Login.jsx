@@ -1,31 +1,25 @@
-import { Card,Form,Button} from "react-bootstrap";
-import { Link } from "react-router-dom";
-
-
-
-
+import { Card,Form,Button, Alert} from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { useRef, useState } from "react";
 
 const Login = () => {
+    const {login} = useAuth
     const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
+  async function handlesubmit(e) {
     e.preventDefault();
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
-    }
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      await login(emailRef.current.value, passwordRef.current.value);
+       navigate("/");
     } catch {
-      setError("Failed to create an account");
+      setError("Failed to log in");
     }
     setLoading(false);
   }
@@ -34,18 +28,19 @@ const Login = () => {
         
         <Card>
         <Card.Body>
-            <h2 className="text-center mb-4">Signup</h2>
+            <h2 className="text-center mb-4">log in</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handlesubmit}>
                 <Form.Group>
                     <Form.Label htmlFor="email">Email</Form.Label>
-                    <Form.Control type="email" id="email" />
+                    <Form.Control type="email" id="email" ref={emailRef} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label htmlFor="password">Password</Form.Label>
-                    <Form.Control type="password" id="password" />
+                    <Form.Control type="password" id="password" ref={passwordRef} />
                 </Form.Group>
              
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" disabled={loading}>
                 Log in
       </Button>
             </Form>
