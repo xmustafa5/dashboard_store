@@ -7,7 +7,7 @@ const AuthProvider = ({ children }) => {
        const [ currentUser , setCurrentUser]= useState()
        const [ loading , setLoading]= useState(true)
        const logout = () =>{
-        signOut()
+      return  signOut(auth)
        }
         const signup = (email,password) =>{
                 createUserWithEmailAndPassword(auth,email,password)

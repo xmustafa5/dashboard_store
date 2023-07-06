@@ -8,6 +8,7 @@ const Dashboard = () => {
   const [error, setError] = useState("");
   const naviagte = useNavigate();
   const handleLogout = async ()=>{
+    setError("")
     try{
       await logout();
       naviagte("/login")
