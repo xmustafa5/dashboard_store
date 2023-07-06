@@ -6,6 +6,7 @@ import ForgotPassword from './components/ForgotPassword';
 import UpdateProfile from './components/UpdateProfile';
 import Dashboard from './components/Dashboard';
 import AuthProvider from './context/AuthContext';
+import RequireAuth from './context/RequirAuth';
 // import {Container} from "react-bootstrap"
 const App =() =>{
   return (
@@ -18,7 +19,8 @@ sss
           <Route path='/login' element={<Login />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/update-profile' element={<UpdateProfile />} />
-          <Route path='/' element={<Dashboard />} />
+          
+          <Route path='/' element={<RequireAuth><Dashboard /></RequireAuth>} />
         </Routes> 
         </AuthProvider>
 </div>
