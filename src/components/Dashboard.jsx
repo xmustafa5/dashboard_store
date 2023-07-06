@@ -18,6 +18,7 @@ const Dashboard = () => {
   }
   return (
     <>
+    
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">profile</h2>
