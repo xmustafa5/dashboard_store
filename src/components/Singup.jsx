@@ -2,6 +2,7 @@ import {  useRef, useState } from "react";
 import { Card,Form,Button, Alert} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const Singup = () => {
     const {Singup} = useAuth()
@@ -10,15 +11,18 @@ const Singup = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordconformationRef = useRef()
-    const handleSubmit = async (e)=> {
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => { 
+        e.preventDefault();
+  
         if(passwordRef.current.value !== passwordconformationRef.current.value){
-           return setError
+           return setError("password do not match")
         }
-        e.preventDefualt()
         try{
             setError("")
             setLoading(true)
             await Singup(emailRef.current.value,passwordRef.current.value)
+            navigate("/")
         }catch{
             setError("faild to create an account")
         }
