@@ -4,7 +4,11 @@ import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 const Dashboard = () => {
   const { currentUser } = useAuth();
+  const { logout } = useAuth();
   const [error, setError] = useState("");
+  const handleLogout = async ()=>{
+    logout()
+  }
   return (
     <>
       <Card>
@@ -18,7 +22,7 @@ const Dashboard = () => {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Button className="btn btn-primary">log out</Button>
+        <Button className="btn btn-primary" onClick={handleLogout}>log out</Button>
       </div>
     </>
   );
