@@ -8,6 +8,8 @@ import Dashboard from './components/Dashboard';
 import AuthProvider from './context/AuthContext';
 import RequireAuth from './context/RequirAuth';
 // import {Container} from "react-bootstrap"
+import Items from './components/Items'; // Add this line
+  
 const App =() =>{
   return (
      <Container className='d-flex align-items-center justify-content-center ' style={{minHeight:"100vh"}}>
@@ -19,8 +21,8 @@ sss
           <Route path='/login' element={<Login />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/update-profile' element={<UpdateProfile />} />
-          
           <Route path='/' element={<RequireAuth><Dashboard /></RequireAuth>} />
+          <Route path="/items" element={<RequireAuth><Items /></RequireAuth>} /> {/* Add this line */}
         </Routes> 
         </AuthProvider>
 </div>

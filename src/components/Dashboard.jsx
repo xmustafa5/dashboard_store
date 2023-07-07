@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import Items from './Items';
 const Dashboard = () => {
   const { currentUser } = useAuth();
   const { logout } = useAuth();
@@ -18,7 +19,7 @@ const Dashboard = () => {
   }
   return (
     <>
-    
+      <Items/>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">profile</h2>
