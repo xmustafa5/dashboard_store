@@ -13,7 +13,7 @@ import Items from './components/Items'; // Add this line
 const App =() =>{
   return (
      <Container className='d-flex align-items-center justify-content-center ' style={{minHeight:"100vh"}}>
-sss
+
 <div className='w-100' style={{maxWidth:"400px"}}>
 <AuthProvider>
   <Routes>
