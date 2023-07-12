@@ -7,7 +7,7 @@ const Items = () => {
   const { currentUser } = useAuth();
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('');
-
+        
   useEffect(() => {
     const fetchItems = async () => {
       if (!currentUser) {
