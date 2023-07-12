@@ -1,31 +1,9 @@
 import { React, useRef, useState } from "react";
-import { useAuth } from "../context/AuthContext";
 import { Form, Button, Card, Alert } from "react-bootstrap";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 export default function Login() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useAuth();
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const redirectPath = location.state?.path || "/";
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    try {
-      setError("");
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate(redirectPath, {replace: true});
-    } catch {
-      setError("Failed to log in");
-    }
-
-    setLoading(false);
-  }
+ 
 
   return (
     <>
@@ -36,7 +14,7 @@ export default function Login() {
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label htmlFor="email">Email</Form.Label>
-              <Form.Control id="email" type="email" ref={emailRef} required />
+              <Form.Control id="email" type="text" ref={emailRef} required />
             </Form.Group>
             <Form.Group>
               <Form.Label htmlFor="password">Password</Form.Label>
