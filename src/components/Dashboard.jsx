@@ -40,7 +40,9 @@ const Dashboard = () => {
       </nav>
       </header>
 
-      
+      <div>
+        home
+      </div>
     </>
   );
 };
