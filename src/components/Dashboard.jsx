@@ -33,6 +33,9 @@ const Dashboard = () => {
       <div className="w-100 text-center mt-2">
         <Button className="btn btn-primary" onClick={handleLogout}>log out</Button>
       </div> */}
+      <div className="navber">
+
+      </div>
     </>
   );
 };
