@@ -36,7 +36,6 @@ const Dashboard = () => {
       <header className="navber">
       <nav>
         <a href="#">items</a>
-        <a href="#">add item</a>
         <a href="#">all item</a>
       </nav>
       </header>
