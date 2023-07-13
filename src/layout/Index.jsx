@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 import { Navbar } from 'react-bootstrap'
-const Index = ({children}) => {
+const Layout = ({children}) => {
   return (<>
     <Footer/>
     {children}
@@ -9,4 +9,4 @@ const Index = ({children}) => {
  </> )
 }
 
-export default Index
+export default Layout
