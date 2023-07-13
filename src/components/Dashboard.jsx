@@ -36,6 +36,8 @@ const Dashboard = () => {
       <header className="navber">
       <nav>
         <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
       </nav>
       </header>
     </>
