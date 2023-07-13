@@ -42,6 +42,9 @@ const Dashboard = () => {
 
       <div>
         home
+        <button>
+          add item
+        </button>
       </div>
     </>
   );
