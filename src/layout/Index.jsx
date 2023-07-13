@@ -1,9 +1,12 @@
 import React from 'react'
-
-const Index = () => {
-  return (
-    <div>Index</div>
-  )
+import Footer from './Footer'
+import { Navbar } from 'react-bootstrap'
+const Index = ({children}) => {
+  return (<>
+    <Footer/>
+    {children}
+    <Navbar/>
+ </> )
 }
 
 export default Index
