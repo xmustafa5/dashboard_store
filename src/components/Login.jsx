@@ -51,7 +51,6 @@ export default function Login() {
               <Form.Control
                 id="password"
                 type="password"
-              
                 required
               />
             </Form.Group>

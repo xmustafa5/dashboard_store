@@ -19,7 +19,7 @@ const Dashboard = () => {
   }
   return (
     <>
-      <Items/>
+      {/* <Items/>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">profile</h2>
@@ -32,7 +32,7 @@ const Dashboard = () => {
       </Card>
       <div className="w-100 text-center mt-2">
         <Button className="btn btn-primary" onClick={handleLogout}>log out</Button>
-      </div>
+      </div> */}
     </>
   );
 };
